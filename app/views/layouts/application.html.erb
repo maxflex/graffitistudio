@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="Graffitistudio">
+<head>
+  <title>Graffitistudio</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="row">
+  <div class="col-sm-12 text-center">
+    <h1>Graffitistudio</h1>
+  </div>
+</div>
+<%= yield %>
+
+</body>
+</html>
