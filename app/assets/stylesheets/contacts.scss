@@ -1,0 +1,23 @@
+// Place all the styles related to the contacts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+div.frame {
+  float:left;
+  width:256px;
+  height:625px;
+  overflow:hidden;
+  position:relative;
+}
+// iframe {
+//   display:block;
+//   position:absolute;
+//   left:-384px;
+//   top:-937.5px;
+//   width:1024px;
+//   height:2500px;
+//   -webkit-transform:scale(0.25);
+//   -ms-transform:scale(0.25);
+//   transform:scale(0.25);
+//   border:none;
+//   margin:10px;
+// }

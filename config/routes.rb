@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -6,7 +7,13 @@ Rails.application.routes.draw do
   root 'main#index'
   get '/free' => 'free#index'
 
-  post '/free/addUrl' => 'free#addUrl'
+  post '/free/addUrl' => 'free#addUrl', :defaults => { :format => 'json' }
+  resource :contacts, only: [] do
+    get :getAllMessages, defaults: { :format => 'json' }
+    post :contacts, defaults: { :format => 'json' }
+  end
+
+  resources :contacts
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

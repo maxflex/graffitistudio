@@ -7,9 +7,18 @@ angular.module('Graffitistudio')
 ]
 .controller 'FreeCtrl', ($scope, $http) ->
     console.log "FreeCtrl STARTER!!!"
+    $scope.info = ''
+
     $scope.addUrl = ->
       $http.post '/free/addUrl',
         url: $scope.siteUrl
-      ,
-      (rescponse) ->
-        console.log rescponse
+      .then (response) ->
+        if response.data.status == "true"
+          $scope.info = 'Ваш сайт успешно добавлен'
+        else
+          switch response.data.error_code
+            when "1"
+              $scope.info = 'Такой сайт уже существует'
+            when "1025"
+               $scope.info = 'Не установлен баннер'
+          console.log "response>>>>", $scope.info

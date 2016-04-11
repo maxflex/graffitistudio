@@ -21,11 +21,22 @@ module Graffitistudio
     # config.i18n.default_locale = :de
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
-    
+    config.encoding = "utf-8"
+
     config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      address:              'smtp.gmail.com',
+      port:                 587,
+      domain:               'example.com',
+      user_name:            'alkul93123',
+      password:             'kt9vH1xS',
+      authentication:       'plain',
+      enable_starttls_auto: true
+    }
   end
 end
