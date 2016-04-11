@@ -1,0 +1,10 @@
+ru:
+  errors:
+    no_code: 'HTML код не установлен'
+  activerecord:
+    errors:
+      models:
+        free:
+          attributes:
+            url:
+              taken: 'Такой сайт уже существует'

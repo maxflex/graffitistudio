@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   root 'main#index'
   get '/free' => 'free#index'
 
-  post '/free/addUrl' => 'free#addUrl', :defaults => { :format => 'json' }
+  post '/free/add-url' => 'free#add_url', :defaults => { :format => 'json' }
+
   resource :contacts, only: [] do
     get :getAllMessages, defaults: { :format => 'json' }
     post :contacts, defaults: { :format => 'json' }

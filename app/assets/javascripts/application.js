@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require angular
 //= require turbolinks
-//
+//= require ng-rails-csrf
 //
 //= require angular/angular.min
 //= require angular-route/angular-route

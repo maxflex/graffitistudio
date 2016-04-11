@@ -1,4 +1,4 @@
-angular.module('Graffitistudio', [])
+angular.module('Graffitistudio', ['ng-rails-csrf'])
 .controller 'MainCtrl', [
   '$scope'
   ($scope) ->
