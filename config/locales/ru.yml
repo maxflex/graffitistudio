@@ -8,3 +8,7 @@ ru:
           attributes:
             url:
               taken: 'Такой сайт уже существует'
+        wall:
+          attributes:
+            url:
+              taken: 'Такой сайт уже существует'

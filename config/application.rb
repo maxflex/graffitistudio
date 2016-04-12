@@ -22,6 +22,8 @@ module Graffitistudio
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
     config.encoding = "utf-8"
+    # add path to custom validators
+    config.autoload_paths += %W["#{config.root}/app/validators/"]
 
     config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')

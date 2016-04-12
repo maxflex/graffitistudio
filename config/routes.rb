@@ -6,8 +6,13 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'main#index'
   get '/free' => 'free#index'
+  get '/wall' =>  'wall#index'
+
+  post '/wall/add-banner' => 'wall#add_banner', defaults: { format: 'json'}
+  post '/wall/get-banners' => 'wall#get_banners', :defaults => { :format => 'json' }
 
   post '/free/add-url' => 'free#add_url', :defaults => { :format => 'json' }
+
 
   resource :contacts, only: [] do
     get :getAllMessages, defaults: { :format => 'json' }

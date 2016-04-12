@@ -2,12 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 angular.module('Graffitistudio')
-.config ["$httpProvider", ($httpProvider) ->
-  $httpProvider.defaults.headers.common['X-CSRF-Token'] = $('meta[name=csrf-token]').attr('content')
-]
 .controller 'feedbackCtrl', ($scope, $http) ->
-  console.log 'feedbackCtrl was started!'
-  # $scope.error = false
   $scope.name = ''
   $scope.email = ''
   $scope.messages = ''
@@ -37,8 +32,7 @@ angular.module('Graffitistudio')
         name: $scope.name
         email: $scope.email
         message: $scope.message
-      ,
-      (response) ->
+      .then (response) ->
         if response
           $scope.info = "Ваше сообщение отправлено на премодерацию"
         console.log response
