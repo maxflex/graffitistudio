@@ -7,9 +7,12 @@ Rails.application.routes.draw do
   root 'main#index'
   get '/free' => 'free#index'
   get '/wall' =>  'wall#index'
+  get '/promote' => 'promote#index'
 
   post '/wall/add-banner' => 'wall#add_banner', defaults: { format: 'json'}
   post '/wall/get-banners' => 'wall#get_banners', :defaults => { :format => 'json' }
+
+  post 'promote/add-request' => 'promote#add_request', :defaults => { :format => 'json'}
 
   post '/free/add-url' => 'free#add_url', :defaults => { :format => 'json' }
 

@@ -16,7 +16,7 @@ class WallController < ApplicationController
 
   def get_banners
     respond_to do |format|
-      format.json { render json: {banners: Wall.group("url").limit(100).order("RANDOM()")}, status: :ok}
+      format.json { render json: {banners: Wall.all.limit(100)}, status: :ok}
     end
   end
 end

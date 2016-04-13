@@ -1,7 +1,7 @@
 class Free < ActiveRecord::Base
 
   validates :url, uniqueness: { case_sensitive: false },
-      url: {tag: "<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>"}
+      url: {code: "<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>"}
   before_validation :crop_host
 
   private

@@ -3,8 +3,8 @@ class Wall < ActiveRecord::Base
   # require 'open-uri'
 
   # validate :url_correct
-  validates :url, uniqueness: { case_sensitive: false },
-      url: {tag: "<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>"}
+  validates :url, uniqueness: { case_sensitive: false }
+      # url: {check_code: true, code: "<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>"}
   validates :url, :desc, :img, presence: true
 
   before_validation :crop_host
