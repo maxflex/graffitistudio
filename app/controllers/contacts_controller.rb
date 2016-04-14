@@ -23,13 +23,15 @@ class ContactsController < ApplicationController
   # POST /contacts
   # POST /contacts.json
   def create
-    @contact = Contact.new(name: params[:name], email: params[:email], message: params[:message])
+    contact = Contact.new(name: params[:name], email: params[:email], message: params[:message])
 
-    if @contact.save
-      FeedBackMailer.th_for_message(@contact).deliver_now
-      render json: "true"
-    else
-      render json: "false"
+    respond_to do |format|
+      if contact.valid?
+        contact.save
+        format.json { render json: nil, status: :ok}
+      else
+        format.json { render json: {errors: contact.errors.full_messages }, status: :unprocessable_entity }
+      end
     end
   end
 

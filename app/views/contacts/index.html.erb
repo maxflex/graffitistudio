@@ -14,8 +14,13 @@
         </h5>
       </div>
       <div class="row">
-        <div class="col-lg-12 col-md-12 info" ng-show="error" ng-bind="info">
-
+        <div class="form-group" ng-show="info">
+          <hr>
+          <p class='text-success'>{{ success }}</span>
+          <p ng-repeat='error in errors' class='text-danger'>
+           {{ error }}
+          </p>
+          <hr>
         </div>
       </div>
       <div class="row">

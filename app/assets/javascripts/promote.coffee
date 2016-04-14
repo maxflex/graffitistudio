@@ -6,6 +6,7 @@ angular.module('Graffitistudio')
       console.log "PromoteCtrl was started"
       $scope.prefix = 'http://'
       secure = false
+      $scope.info = false
 
       $scope.sitchHttp = ->
         secure = !secure
@@ -26,6 +27,8 @@ angular.module('Graffitistudio')
           subject: $scope.subject
           fio: $scope.fio
         .success (response) ->
+          $scope.info = true
           $scope.success = 'Ваша завка отправлена, и будет обработна в близжайшее время'
         .error (response) ->
+          $scope.info = true
           $scope.errors = response.errors

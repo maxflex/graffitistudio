@@ -15,24 +15,18 @@ angular.module('Graffitistudio')
       console.log 'messages>>>', $scope.messages
 
   $scope.sendFeedback = ->
-    $scope.error = false
+    $scope.success = ''
+    $scope.errors = ''
 
-    if !$scope.name.length
-      console.log $scope.name.length
-      $scope.error = true
-      $scope.info = "Имя не может быть пустым"
-
-    if !$scope.email.length
-      console.log $scope.email.length
-      $scope.error = true
-      $scope.info = "Email не может быть пустым, и должен быть в формате example@example.ru"
-
-    if !$scope.error
-      $http.post '/contacts',
-        name: $scope.name
-        email: $scope.email
-        message: $scope.message
-      .then (response) ->
-        if response
-          $scope.info = "Ваше сообщение отправлено на премодерацию"
-        console.log response
+    $http.post '/contacts',
+      name: $scope.name
+      email: $scope.email
+      message: $scope.message
+    .success (response) ->
+      $scope.info = true
+      $('input').val('')
+      $('textarea').val('')
+      $scope.success = 'Ваша завка отправлена, и будет обработна в близжайшее время'
+    .error (response) ->
+      $scope.info = true
+      $scope.errors = response.errors

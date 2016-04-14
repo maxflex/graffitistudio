@@ -29,32 +29,32 @@
         <div class="col-lg-12 col-md-12">
           <form role="form">
             <div class="form-group">
-              <label for="email">Email</label>
+              <label for="email">Email:</label>
               <input type="text" id="email" class="form-control" placeholder="Ваш email" ng-model="email" >
             </div>
             <div class="form-group">
-              <label for="siteUrl">Url</label>
+              <label for="siteUrl">Url:</label>
               <div class="input-group">
                 <span class="input-group-addon prefix {{ secure }}" ng-click="sitchHttp()">{{ prefix }}</span>
                 <input type="text" id="siteUrl" class="form-control" placeholder="Введите URL сайта" ng-model="siteUrl" >
               </div>
             </div>
             <div class="form-group">
-              <label for="description">Описание</label>
+              <label for="description">Описание:</label>
               <textarea name="description" class="form-control" rows="8" cols="40" ng-model="desc"></textarea>
             </div>
             <div class="form-group">
-              <label for="subject">Тематика</label>
-                <select class="" name="" ng-model="subject">
-                  <option value="1">option 1</option>
-                  <option value="2">option 2</option>
-                </select>
+              <label for="subject">Тематика:</label>
+              <select class="selectpicker col-lg-10 pull-right" name="" ng-model="subject">
+                <option value="1">option 1</option>
+                <option value="2">option 2</option>
+              </select>
             </div>
             <div class="form-group">
-              <label for="fio"> Ваше ФИО</label>
+              <label for="fio"> Ваше ФИО:</label>
               <input type="text" id="siteUrl" class="form-control" placeholder="Ваше ФИО" ng-model="fio" >
             </div>
-            <input type="button" class="btn btn-success" ng-click="addRequest()" value="Добавить на стену">
+            <input type="button" class="btn btn-success" ng-click="addRequest()" value="Оплатить и раскрутить">
           </form>
         </div>
       </div>

@@ -1,6 +1,9 @@
 ru:
   errors:
     no_code: 'HTML код не установлен'
+    invalid_email: 'Не верно введен email! Email должен быть в формате example@example.ru'
+    invalid_url: 'Не правильно введен URL сайта'
+    url_exist: 'Ваш сайт уже на стене!'
   activerecord:
     errors:
       models:
@@ -12,3 +15,7 @@ ru:
           attributes:
             url:
               taken: 'Такой сайт уже существует'
+        conact:
+          attributes:
+            email:
+              blank: 'Email не может быть пустым!'

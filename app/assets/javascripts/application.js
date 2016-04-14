@@ -15,6 +15,9 @@
 //= require angular
 //= require turbolinks
 //= require ng-rails-csrf
+//= require bootstrap-select
+//= require bootstrap/alert
+//= require bootstrap/dropdown
 //
 //= require angular/angular.min
 //= require angular-route/angular-route

@@ -37,6 +37,8 @@ gem "font-awesome-rails"
 
 gem 'bootstrap-sass'
 
+gem 'bootstrap-select-rails'
+
 # Equivalent of cURL for Ruby
 gem 'curb'
 
