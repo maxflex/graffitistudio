@@ -5,7 +5,7 @@ class Wall < ActiveRecord::Base
   # validate :url_correct
   validates :url, url: {check_code: true,
     code: "<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>",
-    check_one_hungred: true}
+    check_one_hungred: true, table: 'walls'}
   validates :url, :desc, :img, presence: true
 
   before_validation :crop_host

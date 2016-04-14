@@ -21,5 +21,6 @@
 //
 //= require angular/angular.min
 //= require angular-route/angular-route
+//= require angular-resource/angular-resource.min
 //
 //= require_tree .

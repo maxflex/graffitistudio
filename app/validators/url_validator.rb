@@ -14,7 +14,7 @@ class UrlValidator < ActiveModel::EachValidator
     end
 
     if options[:check_one_hungred]
-      wall = Wall.find_by_sql ["SELECT url FROM (SELECT url FROM walls ORDER BY id DESC LIMIT 100) AS t WHERE t.url = ?", value]
+      wall = Wall.find_by_sql ["SELECT url FROM (SELECT url FROM walls ORDER BY id DESC LIMIT 100) AS t WHERE t.url = ?",  value]
       if !wall.empty?
         record.errors[attribute] << (I18n.t('errors.url_exist'))
       end

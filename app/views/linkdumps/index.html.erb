@@ -1,0 +1,47 @@
+<div class="container" ng-controller="LinkdumpCtrl">
+  <div class="row">
+    <div class="col-lg-8 col-md-8 col-lg-offset-2">
+      <div class="row">
+        <div class="col-lg-12 col-md-12">
+            Линкдамп - это проиндексированная всеми поисковиками страница, куда вы можете добавлять ссылки своих сайтов совершенно свободно и в любом количестве. Размещение вашей ссылки в линкдампе - это гарантированное поднятие ТИЦ на одну единицу. Мы следим за тем, чтобы наш линкдамп был проиндексирован. После блокировки линкдампа мы переносим его на другую, опять же, проиндексированную страницу.
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 col-md-12">
+          ВНИМАНИЕ! Линкдамп показывает только 100 последних добавленных сайтов.
+          ВНИМАНИЕ! Если ваш сайт уже находится в списке ниже, то добавить его еще раз будет запрещено.
+        </div>
+      </div>
+      <div class="row text-center">
+          <div class="col-lg-12 col-md-12" ng-repeat="link in links">
+            <span>{{ $index }}.</span><a href="{{ link.url }}">{{ link.url }}</a>
+          </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-lg-12 col-md-12">
+          <form class="form-inline" role="form">
+            <div class="">
+              <div class="form-group">
+                <label for="url">Адрес сайта:</label>
+                <div class="input-group">
+                  <span class="input-group-addon prefix {{ secure }}" ng-click="sitchHttp()">{{ prefix }}</span>
+                  <input type="text" id="siteUrl" class="form-control" placeholder="Введите URL сайта" ng-model="url" >
+                </div>
+                <!-- <input type="text" class="form-control" id="url" ng-model="url"> -->
+              </div>
+              <div class="form-group">
+                <input type="button" class="btn btn-primary" ng-click="addUrl()" value="Добавить">
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="form-group">
+         <p class='text-success'>{{ success }}</span>
+         <p ng-repeat='error in errors' class='text-danger'>
+           {{ error }}
+         </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

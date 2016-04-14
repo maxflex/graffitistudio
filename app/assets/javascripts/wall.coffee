@@ -38,13 +38,3 @@ angular.module('Graffitistudio')
         $scope.success = 'Ваш сайт успешно добавлен на стену'
       .error (response) ->
         $scope.errors = response.errors
-    # $scope.addUrl = ->
-    #   $scope.success = ''
-    #   $scope.errors = ''
-    #
-    #   $http.post '/free/add-url',
-    #     url: $scope.siteUrl
-    #   .success (response) ->
-    #     $scope.success = 'Ваш сайт успешно добавлен'
-    #   .error (response) ->
-    #     $scope.errors = response.errors
