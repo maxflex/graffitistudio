@@ -1,0 +1,9 @@
+p#notice
+  = notice
+p
+  strong
+    | Url:
+  = @linkdump.url
+= link_to 'Edit', edit_linkdump_path(@linkdump)
+|  | 
+= link_to 'Back', linkdumps_path

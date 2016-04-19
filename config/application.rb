@@ -35,8 +35,8 @@ module Graffitistudio
       address:              'smtp.gmail.com',
       port:                 587,
       domain:               'example.com',
-      user_name:            'alkul93123',
-      password:             'kt9vH1xS',
+      user_name:            'clockwerk1111',
+      password:             '9E2SA41a',
       authentication:       'plain',
       enable_starttls_auto: true
     }

@@ -3,6 +3,55 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap";
 body {
-  padding-top: 70px;
+  // padding-top: 70px;
   background: #f3f3f4;
+}
+.topic {
+  color: #FF0055;
+  text-decoration: none;
+  font-size: 18pt;
+  // margin: 3% 0;
+}
+.header .row {
+  margin: 3% 0;
+}
+.logo {
+  margin-top: 0;
+}
+.red {
+  color: rgb(204, 0, 0);
+}
+.text {
+  font-size: 15px;
+  font-weight: bold;
+  color: #3399FF;
+  margin: 2% 0;
+}
+.justify {
+  text-align: justify;
+}
+.main .row {
+  margin: 3% 0;
+}
+.footer .row {
+  margin: 3% 0;
+}
+a {
+  color: #3399FF !important;
+}
+a:hover {
+  background-color: white !important;
+}
+.important-text {
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(204, 0, 0);
+  margin: 2% 0;
+}
+.main-text {
+  color: #3399FF;
+}
+.wall-images {
+  float: left;
+  display: inline-block;
 }

@@ -1,0 +1,18 @@
+= provide(:title, 'Вопросы о бесплатной раскрутке')
+.container ng-init="questions = #{@questions.to_json}"
+  .row
+    .col-lg-6.col-md-6.col-lg-offset-3
+      ul.text
+        li ng-repeat='question in questions'
+          a href="#href{{ $index }}"
+            | {{ question.question }}
+      hr
+      .row ng-repeat='question in questions'
+        .col-lg-12.col-md-12
+          .row.important-text
+            .col-lg-12.col-md-12
+              a name="href{{ $index }}"
+              | {{ question.question }}
+          .row.main-text
+            .col-lg-12.col-md-12 ng-bind-html="question.answer"
+          hr

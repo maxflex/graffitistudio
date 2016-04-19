@@ -1,0 +1,46 @@
+= provide(:title, 'Связаться с представителями')
+.container[ng-controller="feedbackCtrl"]
+  .row
+    .col-lg-6.col-md-6.col-md-offset-3
+      .row.text.justify
+        |  Если у вас возникли вопросы или предложения, то они всегда могут быть рассмотрены представителями нашей компании. Воспользовавшись формой ниже вы можете отправить письмо и связаться с нами. Мы не оставляем ни одного сообщения без внимания. 
+      .row
+        .form-group[ng-show="info"]
+          hr
+          p.text-success
+            | {{ success }}
+          p.text-danger[ng-repeat="error in errors"]
+            |  {{ error }} 
+          hr
+      .row
+        .form-group
+          label[for="name"]
+            | Введите ваше имя
+          input#name.form-control[type="text" ng-model="name" placeholder="Имя"]
+      .row
+        .form-group
+          label[for="email"]
+            | Введите ваш email
+          input#email.form-control[type="email" ng-model="email" placeholder="Email"]
+      .row
+        .form-group
+          label[for="message"]
+            | Введите ваше сообщение
+          textarea#message.form-control[type="text" ng-model="message"]
+      .row
+        .form-group
+          button.btn.btn-primary[type="button" ng-click="sendFeedback()"]
+            | Отправить
+      .row
+        / h1
+        /   | Ответы:
+        / hr
+      / .row
+      /   .col-lg-12.col-md-12[ng-repeat="message in messages"]
+      /     .row[style="margin-left:10px;"]
+      /       .col-sm-12[style="font-size:14px; color:#gray; font-weight: bold "]
+      /         |  {{ message.name }} 
+      /         span[style="color: gray"]
+      /           |  | {{ message.email }} 
+      /       .col-sm-11[style="margin-left:10px;"]
+      /         |  {{ message.message }} 

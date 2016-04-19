@@ -3,14 +3,10 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 angular.module('Graffitistudio')
   .factory "Linkdump", ($resource) ->
-    $resource '/linkdumps/:id'
+    $resource '/linkdump/:id'
   .controller 'LinkdumpCtrl', ($scope, $http, Linkdump) ->
     $scope.prefix = 'http://'
     secure = false
-
-    Linkdump.query().$promise
-      .then (links) ->
-        $scope.links = links
 
     $scope.sitchHttp = ->
       secure = !secure
@@ -30,7 +26,9 @@ angular.module('Graffitistudio')
       }
 
       Linkdump.save link, (res) ->
-        console.log "res>>>", res
+        $scope.success = 'Ссылка успешно добавлена'
+      , (errors) ->
+        $scope.errors = errors.data.url
       #
       # link.$save()
       #   .then (res)->

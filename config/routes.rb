@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
 
-  resources :linkdumps
+  resources :linkdumps, :path => "linkdump"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'main#index'
-  get '/free' => 'free#index'
+  get '/auto' => 'free#index'
   get '/wall' =>  'wall#index'
   get '/promote' => 'promote#index'
+  get '/faq'  => 'faq#index'
 
   post '/wall/add-banner' => 'wall#add_banner', defaults: { format: 'json'}
   post '/wall/get-banners' => 'wall#get_banners', :defaults => { :format => 'json' }

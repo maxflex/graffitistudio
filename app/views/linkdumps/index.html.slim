@@ -1,0 +1,41 @@
+= provide(:title, 'Линкдамп')
+.container[ng-controller="LinkdumpCtrl", ng-init="links = #{@linkdumps.to_json} "]
+  .row
+    .col-lg-6.col-md-6.col-lg-offset-3
+      .row.text.justify
+        .col-lg-12.col-md-12
+          span.red
+            | Линкдамп
+          |   - это проиндексированная всеми поисковиками страница, куда вы можете добавлять ссылки своих сайтов совершенно свободно и в любом количестве. Размещение вашей ссылки в линкдампе - это гарантированное поднятие ТИЦ на одну единицу. Мы следим за тем, чтобы наш линкдамп был проиндексирован. После блокировки линкдампа мы переносим его на другую, опять же, проиндексированную страницу. 
+      .row.important-text
+        .col-lg-12.col-md-12
+          |  ВНИМАНИЕ! Линкдамп показывает только 100 последних добавленных сайтов.
+      .row.important-text
+        .col-lg-12.col-md-12
+          |  ВНИМАНИЕ! Если ваш сайт уже находится в списке ниже, то добавить его еще раз будет запрещено. 
+      hr
+      .row.justify.text
+        .col-lg-12.col-md-12[ng-repeat="link in links"]
+          span
+            | {{ $index }}.
+          a[href="{{ link.url }}"]
+            |  {{ link.url }}
+      hr
+      .row.text-center
+        .col-lg-12.col-md-12
+          form.form-inline[role="form"]
+            div
+              .form-group
+                label[for="url"]
+                  | Адрес сайта: 
+                .input-group
+                  span.input-group-addon.prefix[class="{{ secure }}", ng-click="sitchHttp()"]
+                    | {{ prefix }}
+                  input#siteUrl.form-control[type="text" placeholder="Введите URL сайта" ng-model="url"]
+              .form-group
+                input.btn.btn-primary[type="button" ng-click="addUrl()" value="Добавить"]
+        .form-group
+          p.text-success
+            | {{ success }}
+          p.text-danger[ng-repeat="error in errors"]
+            |  {{ error }} 

@@ -1,0 +1,58 @@
+= provide(:title, 'Бесплатная раскрутка')
+.container[ng-controller="FreeCtrl"]
+  .row
+    .col-lg-6.col-md-6.col-lg-offset-3.text-center
+      .row.text.justify
+        .col-lg-12.col-md-12
+          span.red
+            | Бесплатная раскрутка сайта
+          |   - это раскрутка сайта посредством установления на ваш сайт баннера Graffiti Decorations®. После установки баннера, вы зарегистрируйтесь в базе данных, которая постепенно автоматически регистрирует сайт в каталогах, поисковиках, рейтингах. Имея на вашей страничке баннер, вы в скором времени увидите, что ваш сайт появляется во всех поисковиках, поднимает свои позиции, увеличивает свои индекс цитирования и Page Rank! Раскрутка основывается на метатегах описания и ключевых слов, так что, убедитесь что вы прописали их в заголовке вашего сайта. В настоящий момент данная услуга является совершенно бесплатной! 
+      .row.text.justify
+        .col-lg-12.col-md-12
+          span.red
+            | Установка баннера. 
+          |    Наш баннер имеет анимационное расширение (*.gif) и выглядит следующим образом:
+      hr
+      .row
+        .col-lg-12.col-md-12
+          img[src="#{asset_path "banner2.gif"}"]
+      hr
+      .row.text.justify
+        .col-lg-12.col-md-12
+          |  Чтобы добавить ваш сайт в список бесплатной раскрутки вам нужно:
+      hr
+      .row.text.justify
+        .col-lg-12.col-md-12
+          |  1. Установить баннер для добавления вашего сайта в список бесплатной раскрутки. Скопируйте код ниже и вставьте его на страничку вашего сайта: 
+          textarea.form-control[rows="6" disabled]
+            | <!-- "Graffiti Decorations (R) Banner Start" -->
+            |  <a href="http://graffitistudio.ru" title="Сайт добавлен в список бесплатной раскрутки Graffiti Decorations (R) Site Promoter"><img border="1"  src="http://graffitistudio.ru/banners/banner2.gif" width="100" height="100" alt="Graffiti Decorations(R) Studio (TM) Site Promoter"></a>
+            |  <!-- "Graffiti Decorations (R) Banner End  " -->
+      .row.text.justify
+        .col-lg-12.col-md-12
+          | 2. Добавить сайт в базу Graffiti:
+      .row
+        .col-lg-12.col-md-12
+          .form-group
+            / label.pull-left[for="exampleInputPassword1"]
+            /   | Введите адрес сайта
+            input.form-control[type="text" placeholder="Адресс сайта" ng-model="siteUrl"]
+          .form-group
+            input.btn.btn-success[type="button" value="Добавить сайт" ng-click="addUrl()"]
+          .col-sm-12
+            p.text-success
+              | {{ success }}
+            p.text-danger[ng-repeat="error in errors"]
+              |  {{ error }} 
+  / .col-sm-6
+  /   .form-group
+  /     label[for="exampleInputPassword1"]
+  /       | Введите адрес сайта
+  /     input.form-control[type="text" placeholder="Адресс сайта" ng-model="siteUrl"]
+  /   .form-group.pull-right
+  /     input.btn.btn-success[type="button" value="Добавить сайт" ng-click="addUrl()"]
+  /   .col-sm-12
+  /     p.text-success
+  /       | {{ success }}
+  /     p.text-danger[ng-repeat="error in errors"]
+  /       |  {{ error }} 

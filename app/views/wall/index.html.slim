@@ -1,0 +1,49 @@
+= provide(:title, 'Стена посещений')
+.container[ng-controller="WallCtrl"]
+  .col-lg-6.col-md-6.col-lg-offset-3.text-center
+    .row.text.justify
+      .col-lg-12.col-md-12
+        span.red
+          | Стена посещений
+        |   - это свободное рекламное место для Вас на нашем сайте. Поставте свой баннер на нашу стену, и тысячи пользователей нашей системы увидят его. Размеры кнопки - 31x88. 
+    .row
+      .col-lg-12.col-md-12
+        input.btn.btn-primary[type="button" ng-click="showForm()" ng-hide="formAddBanner" value="Добавить баннер"]
+    .col-lg-12.col-md-12[ng-show="formAddBanner"]
+      form[role="form"]
+        .form-group
+          label[for="siteUrl"]
+          .input-group
+            span.input-group-addon.prefix class="{{ secure }}" ng-click="sitchHttp()"
+              | {{ prefix }}
+            input#siteUrl.form-control[type="text" placeholder="Введите URL сайта" ng-model="siteUrl"]
+        .form-group
+          label[for="siteTitle"]
+          input#siteTitle.form-control[type="text" placeholder="Заголовок сайта" ng-model="siteTitle"]
+        .form-group
+          label[for="bannerUrl"]
+          .input-group
+            span.input-group-addon.prefix class="{{ secure }}" ng-click="sitchHttp()"
+              | {{ prefix }}
+            input#bannerUrl.form-control[type="text" placeholder="Адрес баннера" ng-model="bannerUrl"]
+        .form-group
+          label[for="ourBanner"]
+            | Не забудьте установить на своем сайте обратную текстовую ссылку на наш сайт, что бы ваш баннер остался на стене 
+          textarea.form-control[rows="5" disabled]
+
+          a[href="http://vliker.ru/" title="Накрутка сердечек вконтакте бесплатно!"]
+            b
+              | Накрутка сердечек вконтакте!
+        .form-group
+          p.text-success
+            | {{ success }}
+          p.text-danger[ng-repeat="error in errors"]
+            |  {{ error }} 
+        input.btn.btn-success[type="button" ng-click="addBanner()" value="Добавить на стену"]
+        input.btn.btn-danger[type="button" ng-click="showForm()" value="Вернуться на стену"]
+    .row
+      .col-lg-12.col-md-12
+        .row.wall-images
+          .col-lg-1.col-md-1[ng-repeat="banner in banners"]
+            a[href="{{ banner.url }}" target="blank"]
+              img[src="{{ banner.img }}" alt="{{ banner.desc }}" width="88" height="31"]

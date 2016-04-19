@@ -42,6 +42,10 @@ gem 'bootstrap-select-rails'
 # Equivalent of cURL for Ruby
 gem 'curb'
 
+# Slim
+gem 'slim-rails'
+gem 'html2slim'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

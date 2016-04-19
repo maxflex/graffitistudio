@@ -27,8 +27,11 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       if contact.valid?
-        contact.save
-        format.json { render json: nil, status: :ok}
+        if contact.save
+          FeedBackMailer.th_for_message(contact).deliver_now
+          format.json { render json: nil, status: :ok}
+        end
+
       else
         format.json { render json: {errors: contact.errors.full_messages }, status: :unprocessable_entity }
       end
