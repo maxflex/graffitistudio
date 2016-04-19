@@ -37,14 +37,19 @@ set :rails_env, :production
 set :rvm_type, :system
 
 namespace :deploy do
-
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
+  before :starting, :ensure_user do
+    on roles(:web) do
+      within release_path do
+        execute :service, 'unicorn_graffitistudio', 'stop'
+        # execute :source, '/etc/default/unicorn_graffitistudio'
+      end
     end
   end
-
+  after :finishing, :notify do
+    on roles(:web), in: :groups, limit: 3, wait: 10 do
+      within release_path do
+        execute :service, 'unicorn_graffitistudio', 'start'
+      end
+    end
+  end
 end

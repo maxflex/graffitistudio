@@ -32,4 +32,6 @@ test:
 
 production:
   <<: *default
+  username: rails
+  password: M5glzzpMlQ
   database: graffiti_production
