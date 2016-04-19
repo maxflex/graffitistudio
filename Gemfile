@@ -40,7 +40,7 @@ gem 'bootstrap-sass'
 gem 'bootstrap-select-rails'
 
 # Equivalent of cURL for Ruby
-gem 'curb'
+# gem 'curb'
 
 # Slim
 gem 'slim-rails'
@@ -52,13 +52,14 @@ gem 'html2slim'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-
+  gem 'dotenv-rails'
 end
 
 group :development do
