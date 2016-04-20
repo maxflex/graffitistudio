@@ -55,3 +55,7 @@ a:hover {
   float: left;
   display: inline-block;
 }
+.modal {
+  z-index: 9999;
+  border: 1px solid red;
+}

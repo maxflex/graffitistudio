@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'payments/yandex'
+
   resources :linkdumps, :path => "linkdump"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -10,6 +12,8 @@ Rails.application.routes.draw do
   get '/wall' =>  'wall#index'
   get '/promote' => 'promote#index'
   get '/faq'  => 'faq#index'
+  
+  post '/payments/yandex' => 'payments#yandex'
 
   post '/wall/add-banner' => 'wall#add_banner', defaults: { format: 'json'}
   post '/wall/get-banners' => 'wall#get_banners', :defaults => { :format => 'json' }

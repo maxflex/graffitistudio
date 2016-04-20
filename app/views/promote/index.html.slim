@@ -84,3 +84,42 @@
                 |  Ваше ФИО:
               input#siteUrl.form-control[type="text" placeholder="Ваше ФИО" ng-model="fio"]
             input.btn.btn-success[type="button" ng-click="addRequest()" value="Оплатить и раскрутить"]
+            
+          .row ng-show="test"
+            form action="https://money.yandex.ru/quickpay/confirm.xml" method="POST" 
+              input name="receiver" type="hidden" value="410012930581251" 
+              input name="label" type="hidden" value="123" 
+              input name="formcomment" type="hidden" value=("Проект «Железный человек»: реактор холодного ядерного синтеза") /
+              input name="short-dest" type="hidden" value=("Проект «Железный человек»: реактор холодного ядерного синтеза") /
+              input name="quickpay-form" type="hidden" value="donate" 
+              input name="targets" type="hidden" value=("транзакция {123}") 
+              input data-type="number" name="sum" type="hidden" value="0.1" 
+              input name="need-fio" type="hidden" value="false" 
+              input name="need-email" type="hidden" value="false" 
+              input name="need-phone" type="hidden" value="false" 
+              input name="need-address" type="hidden" value="false" 
+              label
+                input name="paymentType" type="radio" value="PC"
+                | Яндекс.Деньгами
+              label
+                input name="paymentType" type="radio" value="AC"
+                | Банковской картой
+              input type="submit" value="Перевести" 
+              
+            / script id="myModalContent.html" type="text/ng-template" 
+            /   .modal-header
+            /     h3.modal-title I'm a modal!
+            /     .modal-body
+            /     ul
+            /       li
+            /         a  { tempJson.temp } 
+            /       li
+            /         a  { tempJson.temp1 } 
+            /       li
+            /         a  { tempJson.temp3 } 
+            /     | Selected:
+            /     b  { selected.item } 
+            /     .modal-footer
+            /     button.btn.btn-primary ng-click="ok()"  OK
+            /     button.btn.btn-warning ng-click="cancel()"  Cancel
+            / button.btn.btn-default ng-click="open()"  Open me!

@@ -7,6 +7,7 @@ angular.module('Graffitistudio')
       $scope.prefix = 'http://'
       secure = false
       $scope.info = false
+      $scope.test = true
 
       $scope.sitchHttp = ->
         secure = !secure
@@ -16,6 +17,11 @@ angular.module('Graffitistudio')
         else
           $scope.prefix = 'http://'
           $scope.secure = ''
+
+      $scope.dialogShownOn = ->
+        console.log "test"
+        $scope.test = !$scope.test
+
       $scope.addRequest = ->
         $scope.success = ''
         $scope.errors = ''
@@ -27,6 +33,7 @@ angular.module('Graffitistudio')
           subject: $scope.subject
           fio: $scope.fio
         .success (response) ->
+          $scope.dialogShownOn()
           $scope.info = true
           $scope.success = 'Ваша завка отправлена, и будет обработна в близжайшее время'
         .error (response) ->

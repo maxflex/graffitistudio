@@ -21,6 +21,8 @@
 //
 //= require angular/angular.min
 //= require angular-route/angular-route
+//= require ngModal/dist/ng-modal.min
+//= require angular-bootstrap/ui-bootstrap.min
 //= require angular-resource/angular-resource.min
 //
 //= require_tree .
