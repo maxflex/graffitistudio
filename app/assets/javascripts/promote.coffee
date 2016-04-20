@@ -39,8 +39,3 @@ angular.module('Graffitistudio')
         .error (response) ->
           $scope.info = true
           $scope.errors = response.errors
-
-      $scope.paymentsTest = ->
-        $http.get '/payments/test'
-        .then (res)
-          console.log 'pay test>>>', res
