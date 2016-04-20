@@ -7,7 +7,9 @@ angular.module('Graffitistudio')
       $scope.prefix = 'http://'
       secure = false
       $scope.info = false
-      $scope.test = true
+      $scope.test = false
+      $scope.site = $scope.prefix + $scope.siteUrl
+      $scope.order_id = ""
 
       $scope.sitchHttp = ->
         secure = !secure
@@ -34,6 +36,8 @@ angular.module('Graffitistudio')
           fio: $scope.fio
         .success (response) ->
           $scope.dialogShownOn()
+          console.log 'response>>>>>', response.order
+          $scope.order_id = response.order
           $scope.info = true
           $scope.success = 'Ваша завка отправлена, и будет обработна в близжайшее время'
         .error (response) ->

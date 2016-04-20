@@ -5,7 +5,7 @@ class PromoteController < ApplicationController
     respond_to do |format|
       if request.valid?
         request.save
-        format.json { render json: nil, status: :ok}
+        format.json { render json: {order: request.id }, status: :ok}
       else
         format.json { render json: {errors: request.errors.full_messages }, status: :unprocessable_entity }
       end

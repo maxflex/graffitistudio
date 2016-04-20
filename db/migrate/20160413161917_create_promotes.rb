@@ -10,6 +10,7 @@ class CreatePromotes < ActiveRecord::Migration
       t.string :string
       t.string :fio
       t.string :string
+      t.boolean :pay
 
       t.timestamps null: false
     end

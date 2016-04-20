@@ -35,6 +35,9 @@ class PaymentsController < ApplicationController
       render text: 'HTTP 400 FAIL'
     end
 
+    order = Promote.find_by(id: params[:label])
+    order.pay = true
+    order.save
     # order = Order.new(good_id: order_data[0], link: order_data[1], user_id: order_data[2])
     # order.external_order
 

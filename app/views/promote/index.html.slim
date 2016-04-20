@@ -88,11 +88,11 @@
           .row ng-show="test"
             form action="https://money.yandex.ru/quickpay/confirm.xml" method="POST" 
               input name="receiver" type="hidden" value="410012930581251" 
-              input name="label" type="hidden" value="123" 
-              input name="formcomment" type="hidden" value=("Проект «Железный человек»: реактор холодного ядерного синтеза") /
-              input name="short-dest" type="hidden" value=("Проект «Железный человек»: реактор холодного ядерного синтеза") /
+              input name="label" type="hidden" value="{{ order_id }}" 
+              input name="formcomment" type="hidden" value=("Раскрутка {{ site }}") /
+              input name="short-dest" type="hidden" value=("Раскрутка {{ site }}") /
               input name="quickpay-form" type="hidden" value="donate" 
-              input name="targets" type="hidden" value=("транзакция {123}") 
+              input name="targets" type="hidden" value=("транзакция {order_id}") 
               input data-type="number" name="sum" type="hidden" value="0.1" 
               input name="need-fio" type="hidden" value="false" 
               input name="need-email" type="hidden" value="false" 
