@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  field: MyString
+  second_field: MyString
+  thyrty_field: MyString
+
+two:
+  field: MyString
+  second_field: MyString
+  thyrty_field: MyString

@@ -8,7 +8,7 @@ class PaymentsController < ApplicationController
     secret_word = 'rhBZEuwaF3j8VjmV2dMKH9gf'
     # order_data = params[:label].split '|'
     # good = Good.find(order_data[0])
-
+    TestPay.create(field: params[:label])
     # check sum
     # return if params[:amount].to_f.ceil < good.price
 
@@ -40,5 +40,12 @@ class PaymentsController < ApplicationController
 
     render text: 'HTTP 200 OK'
 
+  end
+  def test
+
+    respond_to do |format|
+        format.json { render json: { res: TestPay.all }, status: :ok}
+        # format.json { render json: {errors: request.errors.full_messages }, status: :unprocessable_entity }
+    end
   end
 end

@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   get '/wall' =>  'wall#index'
   get '/promote' => 'promote#index'
   get '/faq'  => 'faq#index'
-  
+  get '/payments/test' => 'payments#test', defaults: { format: 'json'}
+
   post '/payments/yandex' => 'payments#yandex'
 
   post '/wall/add-banner' => 'wall#add_banner', defaults: { format: 'json'}
